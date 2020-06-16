@@ -4,41 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="20dp"
     tools:context=".FavoritoActivity">
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="@string/hint_buscaNomeDaCidade"/>
+        android:gravity="center"
+        android:text="@string/buscar"
+        android:textSize="24sp" />
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="match_parent"
-            android:id="@+id/spinnerCidades"
-            />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="@string/buscar"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
+        android:gravity="center"
+        android:text="____________________________________________________"
+        android:textColor="@color/colorCinza" />
 
 
-    <ListView
+    <Spinner
+        android:id="@+id/spinnerCidades"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/lvCidades"/>
+        android:spinnerMode="dropdown"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/lvCidades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 
 
 
