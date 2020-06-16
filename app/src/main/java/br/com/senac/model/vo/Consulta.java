@@ -7,6 +7,9 @@ import java.util.Date;
 public class Consulta {
 
     @DatabaseField(allowGeneratedIdInsert = true, generatedId = true)
+    private Integer id;
+
+    @DatabaseField(canBeNull = false)
     private Date data;
 
     @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
