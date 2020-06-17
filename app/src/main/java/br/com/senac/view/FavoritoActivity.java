@@ -1,8 +1,10 @@
-package br.com.senac;
+package br.com.senac.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import br.com.senac.R;
 
 public class FavoritoActivity extends AppCompatActivity {
 

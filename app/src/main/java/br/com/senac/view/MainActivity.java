@@ -1,10 +1,12 @@
 package br.com.senac.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.View;
 import android.view.Window;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        CidadeService cidadeService  = new CidadeService(this);
+        CidadeService cidadeService = new CidadeService(this);
         List<Cidade> cidades = new ArrayList<>();
         try {
             cidadeService.persistirCidadesIniciais();
@@ -48,4 +50,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void chamarOutraTela(View view) {
+        Intent intent = new Intent(MainActivity.this, FavoritoActivity.class);
+        startActivity(intent);
+    }
+
 }
