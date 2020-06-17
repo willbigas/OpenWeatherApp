@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.FavoritoActivity">
+    tools:context=".view.HistoricoActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -19,7 +19,6 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/lvHistorico"
             android:layout_width="match_parent"
             android:layout_height="135dp"
             android:layout_gravity="center"
@@ -48,6 +47,7 @@
             android:layout_height="match_parent">
 
             <ListView
+                android:id="@+id/lvHistorico"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"/>

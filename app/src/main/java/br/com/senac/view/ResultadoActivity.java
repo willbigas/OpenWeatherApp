@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import br.com.senac.R;
 import br.com.senac.control.controllers.ResultadoControl;
 
-public class Resultado extends AppCompatActivity {
+public class ResultadoActivity extends AppCompatActivity {
 
     private TextView tvCidade;
     private Button btnFavorito;
@@ -19,7 +19,7 @@ public class Resultado extends AppCompatActivity {
     private TextView tvTemp;
     private TextView tvUmidade;
 
-    private Resultado resultado;
+    private ResultadoActivity activity;
 
     ResultadoControl control;
 
@@ -28,7 +28,7 @@ public class Resultado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
         inicializaComponentes();
-        control = new ResultadoControl(this.resultado);
+        control = new ResultadoControl(this.activity);
     }
 
     private void inicializaComponentes() {
@@ -39,7 +39,7 @@ public class Resultado extends AppCompatActivity {
         tvTemp = findViewById(R.id.tvTemp);
         tvUmidade = findViewById(R.id.tvUmidade);
 
-        resultado = new Resultado();
+        activity = new ResultadoActivity();
     }
 
 
