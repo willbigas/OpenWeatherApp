@@ -17,22 +17,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/btnHistorico"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:onClick="chamarOutraTela"
+            android:background="@drawable/history" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:text="@string/buscar"
             android:textSize="24sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginBottom="20dp"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
             android:text="_________________________________________________________"
             android:textColor="@color/colorBranco" />
 
@@ -49,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:spinnerMode="dropdown"/>
+            android:spinnerMode="dropdown" />
 
 
         <RelativeLayout
@@ -59,9 +67,7 @@
             <ListView
                 android:id="@+id/lvCidades"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"></ListView>
         </RelativeLayout>
-
-
     </LinearLayout>
 </RelativeLayout>

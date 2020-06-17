@@ -2,4 +2,5 @@
     <string name="app_name">OpenWeatherApp</string>
     <string name="hint_buscaNomeDaCidade">Busque pelo nome da cidade</string>
     <string name="buscar">Buscar</string>
+    <string name="historico">Histórico</string>
 </resources>
