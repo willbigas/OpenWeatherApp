@@ -30,8 +30,7 @@
 
             <Button
                 android:id="@+id/btnFavorito"
-                style="@style/botaoCantoDireito"
-                android:background="@drawable/fav"/>
+                style="@style/botaoCantoDireito"/>
         </LinearLayout>
 
         <ImageView

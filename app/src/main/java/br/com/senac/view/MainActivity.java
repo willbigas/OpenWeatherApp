@@ -3,7 +3,6 @@ package br.com.senac.view;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -59,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        control.atualizarCidadesFavoritas();
+        control.atualizarCidades();
+    }
 
     private void inicializaComponentes() {
         spinnerCidades = findViewById(R.id.spinnerCidades);

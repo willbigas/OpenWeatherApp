@@ -26,13 +26,13 @@ public class CidadeService {
     }
 
     private List<Cidade> criarCidades() {
-
         Cidade palhoca = new Cidade(1, "Palhoça", "palhoça,br", "BR", false);
         Cidade biguacu = new Cidade(2, "Biguaçu", "biguacu,br", "BR", false);
-        Cidade saojose = new Cidade(3, "Sao José", "sao%20jose,br", "BR", false);
-        Cidade florianopolis = new Cidade(4, "Florianópolis", "florianopolis", "BR", false);
+        Cidade lasVegas = new Cidade(3, "Las Vegas", "las%20vegas,eua", "EUA", false);
+        Cidade florianopolis = new Cidade(4, "Florianópolis", "florianopolis,br", "BR", false);
+        Cidade londres = new Cidade(5, "Londres" , "London,uk" , "UK" , false);
 
-        return Arrays.asList(palhoca, biguacu, saojose, florianopolis);
+        return Arrays.asList(palhoca, biguacu, lasVegas, florianopolis , londres);
     }
 
 

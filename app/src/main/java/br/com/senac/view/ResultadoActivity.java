@@ -1,6 +1,7 @@
 package br.com.senac.view;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,11 +27,14 @@ public class ResultadoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
-        inicializaComponentes();
+        initialize();
         control = new ResultadoControl(this);
 
+    }
 
-
+    private void initialize() {
+        inicializaComponentes();
+        inicializaClickListeners();
     }
 
     private void inicializaComponentes() {
@@ -40,6 +44,16 @@ public class ResultadoActivity extends AppCompatActivity {
         tvClimaDesc = findViewById(R.id.tvClimaDesc);
         tvTemp = findViewById(R.id.tvTemp);
         tvUmidade = findViewById(R.id.tvUmidade);
+    }
+
+    private void inicializaClickListeners() {
+        btnFavorito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                control.verificarFavorito();
+            }
+        });
+
     }
 
 

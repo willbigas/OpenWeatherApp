@@ -5,6 +5,8 @@ import android.widget.ArrayAdapter;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.senac.control.services.CidadeService;
 import br.com.senac.control.services.ConsultaService;
@@ -25,6 +27,9 @@ public class MainControl {
     private ConsultaService consultaService;
 
     private ArrayAdapter<Cidade> adapterCidades;
+    private ArrayAdapter<Cidade> adapterCidadesFavoritas;
+
+    private List<Cidade> listCidadesFavoritas;
 
 
     public MainControl(MainActivity activity) {
@@ -32,6 +37,7 @@ public class MainControl {
         initializeServices();
         criarEstruturaInicial();
         configSpinner();
+        configListViewCidadesFavoritas();
     }
 
     private void initializeServices() {
@@ -52,6 +58,20 @@ public class MainControl {
         }
     }
 
+    private void configListViewCidadesFavoritas() {
+        try {
+            listCidadesFavoritas = new ArrayList<Cidade>(cidadeService.buscarFavoritos());
+            adapterCidadesFavoritas = new ArrayAdapter<>(
+                    activity,
+                    android.R.layout.simple_list_item_1,
+                    listCidadesFavoritas
+            );
+            activity.getLvCidades().setAdapter(adapterCidadesFavoritas);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void pesquisar() {
         Cidade cidadeSelecionada = (Cidade) activity.getSpinnerCidades().getSelectedItem();
         Consulta consulta = new Consulta();
@@ -60,6 +80,28 @@ public class MainControl {
             consulta = consultaService.criarConsulta(weatherDTO.getWeather().get(0).getDescription() , weatherDTO.getWeather().get(0).getId(), weatherDTO.getWeather().get(0).getIcon(), cidadeSelecionada, ConversorDeTemperatura.deKelvinParaCelcius(weatherDTO.getMain().getTemp()) , weatherDTO.getMain().getHumidity());
             chamarTelaResultado(consulta);
         } catch (IOException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void atualizarCidadesFavoritas() {
+            try {
+                adapterCidadesFavoritas.clear();
+                List<Cidade> items = new ArrayList<>(cidadeService.buscarFavoritos());
+                adapterCidadesFavoritas.addAll(items);
+                adapterCidadesFavoritas.notifyDataSetChanged();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+    }
+
+    public void atualizarCidades() {
+        try {
+            adapterCidades.clear();
+            List<Cidade> items = new ArrayList<>(cidadeService.buscarTodos());
+            adapterCidades.addAll(items);
+            adapterCidades.notifyDataSetChanged();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

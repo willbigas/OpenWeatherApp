@@ -1,6 +1,12 @@
 package br.com.senac.control.controllers;
 
+import android.content.Context;
+import android.widget.Toast;
+
+import java.sql.SQLException;
+
 import br.com.senac.R;
+import br.com.senac.control.services.CidadeService;
 import br.com.senac.model.vo.Consulta;
 import br.com.senac.util.UtilNumberFormat;
 import br.com.senac.view.ResultadoActivity;
@@ -9,9 +15,16 @@ public class ResultadoControl {
 
     private ResultadoActivity activity;
 
+    private CidadeService cidadeService;
+
     public ResultadoControl(ResultadoActivity activity) {
         this.activity = activity;
         receberDadosDaMain();
+        initializeServices(activity);
+    }
+
+    private void initializeServices(Context context) {
+        cidadeService = new CidadeService(context);
     }
 
 
@@ -26,7 +39,40 @@ public class ResultadoControl {
         activity.getTvUmidade().setText("Umidade: " + consulta.getUmidade().toString() + "%");
         activity.getImgClima().setImageResource(verificarQualOIconeDaConsulta(consulta.getIcon()));
         activity.getTvClimaDesc().setText(verificaQualADescricaoDaConsulta(consulta.getDescricaoID()));
+
+        if (consulta.getCidade().isFavorito()) {
+            activity.getBtnFavorito().setBackgroundResource(R.drawable.fav);
+        }
+
+        if (!consulta.getCidade().isFavorito()) {
+            activity.getBtnFavorito().setBackgroundResource(R.drawable.desfav);
+        }
     }
+
+    public void verificarFavorito() {
+        Consulta consulta = (Consulta) activity.getIntent().getSerializableExtra("consulta");
+
+        if (!consulta.getCidade().isFavorito()) {
+            try {
+                cidadeService.favoritar(consulta.getCidade());
+                activity.getBtnFavorito().setBackgroundResource(R.drawable.fav);
+                Toast.makeText(activity, "Cidade: " + consulta.getCidade().getNome() + " adicionada a lista de favoritos", Toast.LENGTH_SHORT).show();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+
+            try {
+                cidadeService.desfavoritar(consulta.getCidade());
+                activity.getBtnFavorito().setBackgroundResource(R.drawable.desfav);
+                Toast.makeText(activity, "Cidade: " + consulta.getCidade().getNome() + " excluída da lista de favoritos", Toast.LENGTH_SHORT).show();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     public int verificaQualADescricaoDaConsulta(Integer descricaoID) {
         if (descricaoID.equals(200)) {
