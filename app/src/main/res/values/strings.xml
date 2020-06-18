@@ -58,5 +58,8 @@
     <string name="d802">Nuvens dispersas: 25-50%</string>
     <string name="d803">Nuvens fragmentadas: 51-84%</string>
     <string name="d804">Nuvens nubladas: 85-100%</string>
+    <string name="cidade">\"Cidade: \"</string>
+    <string name="adicionada_a_lista_de_favoritos">\" adicionada a lista de favoritos\"</string>
+    <string name="excluida_da_lista_de_favoritos">\" excluída da lista de favoritos\"</string>
 
 </resources>

@@ -56,7 +56,7 @@ public class ResultadoControl {
             try {
                 cidadeService.favoritar(consulta.getCidade());
                 activity.getBtnFavorito().setBackgroundResource(R.drawable.fav);
-                Toast.makeText(activity, "Cidade: " + consulta.getCidade().getNome() + " adicionada a lista de favoritos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, activity.getString(R.string.cidade) + consulta.getCidade().getNome() + activity.getString(R.string.adicionada_a_lista_de_favoritos), Toast.LENGTH_SHORT).show();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -65,7 +65,7 @@ public class ResultadoControl {
             try {
                 cidadeService.desfavoritar(consulta.getCidade());
                 activity.getBtnFavorito().setBackgroundResource(R.drawable.desfav);
-                Toast.makeText(activity, "Cidade: " + consulta.getCidade().getNome() + " excluída da lista de favoritos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, activity.getString(R.string.cidade) + consulta.getCidade().getNome() + activity.getString(R.string.excluida_da_lista_de_favoritos), Toast.LENGTH_SHORT).show();
 
             } catch (SQLException e) {
                 e.printStackTrace();
