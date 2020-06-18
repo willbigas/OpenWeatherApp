@@ -16,7 +16,7 @@ public class MyORMLiteHelper extends OrmLiteSqliteOpenHelper {
 
     //Configuração do banco de dados
     private static final String DATABASE_NAME = "openweather.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
 
     public MyORMLiteHelper(Context c){
         super(c, DATABASE_NAME, null, DATABASE_VERSION);

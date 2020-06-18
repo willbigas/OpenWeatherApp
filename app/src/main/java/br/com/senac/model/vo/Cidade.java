@@ -2,7 +2,9 @@ package br.com.senac.model.vo;
 
 import com.j256.ormlite.field.DatabaseField;
 
-public class Cidade {
+import java.io.Serializable;
+
+public class Cidade implements Serializable {
 
     @DatabaseField(allowGeneratedIdInsert = true, generatedId = true)
     private Integer id;

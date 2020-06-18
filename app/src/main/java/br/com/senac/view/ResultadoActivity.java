@@ -28,6 +28,9 @@ public class ResultadoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resultado);
         inicializaComponentes();
         control = new ResultadoControl(this);
+
+
+
     }
 
     private void inicializaComponentes() {

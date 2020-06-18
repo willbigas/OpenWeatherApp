@@ -49,7 +49,7 @@
             android:id="@+id/tvTemp"
             style="@style/titulo"
             android:text="22ºC"
-            android:textSize="110sp" />
+            android:textSize="80sp" />
 
         <TextView
             android:id="@+id/tvUmidade"
