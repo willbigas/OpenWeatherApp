@@ -1,6 +1,8 @@
 package br.com.senac.control.controllers;
 
 import android.content.Intent;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import java.io.IOException;
@@ -30,6 +32,8 @@ public class MainControl {
     private ArrayAdapter<Cidade> adapterCidadesFavoritas;
 
     private List<Cidade> listCidadesFavoritas;
+
+    private Cidade cidade;
 
 
     public MainControl(MainActivity activity) {
@@ -70,6 +74,18 @@ public class MainControl {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        addShortClickListener();
+    }
+
+    private void addShortClickListener() {
+        activity.getLvCidades().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                cidade = adapterCidadesFavoritas.getItem(position);
+                pesquisar(cidade);
+            }
+        });
     }
 
     public void pesquisar() {
@@ -78,6 +94,17 @@ public class MainControl {
         try {
             WeatherDTO weatherDTO = WeatherServerAPI.get(cidadeSelecionada);
             consulta = consultaService.criarConsulta(weatherDTO.getWeather().get(0).getDescription() , weatherDTO.getWeather().get(0).getId(), weatherDTO.getWeather().get(0).getIcon(), cidadeSelecionada, ConversorDeTemperatura.deKelvinParaCelcius(weatherDTO.getMain().getTemp()) , weatherDTO.getMain().getHumidity());
+            chamarTelaResultado(consulta);
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void pesquisar(Cidade cidade) {
+        Consulta consulta = new Consulta();
+        try {
+            WeatherDTO weatherDTO = WeatherServerAPI.get(cidade);
+            consulta = consultaService.criarConsulta(weatherDTO.getWeather().get(0).getDescription() , weatherDTO.getWeather().get(0).getId(), weatherDTO.getWeather().get(0).getIcon(), cidade, ConversorDeTemperatura.deKelvinParaCelcius(weatherDTO.getMain().getTemp()) , weatherDTO.getMain().getHumidity());
             chamarTelaResultado(consulta);
         } catch (IOException | SQLException e) {
             e.printStackTrace();
