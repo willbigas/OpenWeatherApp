@@ -20,6 +20,9 @@ public class Consulta implements Serializable {
     private String descricao;
 
     @DatabaseField(canBeNull = false)
+    private Integer descricaoID;
+
+    @DatabaseField(canBeNull = false)
     private String icon;
 
     @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
@@ -85,6 +88,14 @@ public class Consulta implements Serializable {
 
     public void setUmidade(Integer umidade) {
         this.umidade = umidade;
+    }
+
+    public Integer getDescricaoID() {
+        return descricaoID;
+    }
+
+    public void setDescricaoID(Integer descricaoID) {
+        this.descricaoID = descricaoID;
     }
 
     @Override

@@ -2,10 +2,18 @@ package br.com.senac.model.api;
 
 public class Weather {
 
+    private Integer id;
     private String main;
     private String description;
     private String icon;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getMain() {
         return main;

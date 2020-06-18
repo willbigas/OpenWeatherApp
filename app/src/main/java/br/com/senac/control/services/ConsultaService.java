@@ -20,12 +20,13 @@ public class ConsultaService {
         consultaDao = new ConsultaDao(c);
     }
 
-    public Consulta criarConsulta(String descricao , String icone , Cidade cidade, Double temperatura , Integer umidade) throws SQLException {
+    public Consulta criarConsulta(String descricao , Integer descricaoID , String icone , Cidade cidade, Double temperatura , Integer umidade) throws SQLException {
         Consulta consulta = new Consulta();
         consulta.setData(new Date(System.currentTimeMillis()));
         consulta.setCidade(cidade);
         consulta.setDescricao(descricao);
         consulta.setIcon(icone);
+        consulta.setDescricaoID(descricaoID);
         consulta.setTemperatura(temperatura);
         consulta.setUmidade(umidade);
         consulta = consultaDao.getDao().createIfNotExists(consulta);

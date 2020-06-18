@@ -57,7 +57,7 @@ public class MainControl {
         Consulta consulta = new Consulta();
         try {
             WeatherDTO weatherDTO = WeatherServerAPI.get(cidadeSelecionada);
-            consulta = consultaService.criarConsulta(weatherDTO.getWeather().get(0).getDescription(), weatherDTO.getWeather().get(0).getIcon(), cidadeSelecionada, ConversorDeTemperatura.deKelvinParaCelcius(weatherDTO.getMain().getTemp()) , weatherDTO.getMain().getHumidity());
+            consulta = consultaService.criarConsulta(weatherDTO.getWeather().get(0).getDescription() , weatherDTO.getWeather().get(0).getId(), weatherDTO.getWeather().get(0).getIcon(), cidadeSelecionada, ConversorDeTemperatura.deKelvinParaCelcius(weatherDTO.getMain().getTemp()) , weatherDTO.getMain().getHumidity());
             chamarTelaResultado(consulta);
         } catch (IOException | SQLException e) {
             e.printStackTrace();
