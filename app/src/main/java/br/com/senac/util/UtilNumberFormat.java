@@ -10,7 +10,7 @@ public class UtilNumberFormat {
     }
 
     public static String deDecimalParaString(Double decimal) {
-        return NumberFormat.getInstance().format(decimal);
+        return NumberFormat.getInstance().format(decimal.intValue());
     }
 
 
