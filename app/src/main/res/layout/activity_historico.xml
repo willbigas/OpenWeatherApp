@@ -7,11 +7,8 @@
     tools:context=".view.HistoricoActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.6"
-        android:scaleType="centerCrop"
-        android:src="@drawable/backgroundnuvem" />
+        android:src="@drawable/backgroundnuvem"
+        style="@style/background" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,28 +16,16 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
-            android:layout_gravity="center"
-            android:layout_margin="15dp"
-            android:src="@drawable/history" />
+            android:src="@drawable/history"
+            style="@style/image" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="@string/historico"
-            android:textSize="24sp" />
+            style="@style/titulo"
+            android:text="@string/historico" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
             android:text="_________________________________________________________"
-            android:textColor="@color/colorBranco" />
+            style="@style/divisor" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -50,7 +35,7 @@
                 android:id="@+id/lvHistorico"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"/>
+                android:layout_margin="15dp" />
         </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>
