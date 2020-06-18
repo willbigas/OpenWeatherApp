@@ -19,7 +19,6 @@
 
         <Button
             android:id="@+id/btnHistorico"
-            android:onClick="chamarTelaHistorico"
             style="@style/botaoCantoDireito" />
 
         <ImageView
