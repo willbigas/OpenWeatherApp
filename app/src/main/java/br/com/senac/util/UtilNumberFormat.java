@@ -17,7 +17,7 @@ public class UtilNumberFormat {
     public static String deDecimalParaCelciusFormatado(Double decimal) {
        String formatado =  deDecimalParaString(decimal);
 
-       String celciusFormatado = formatado+"C";
+       String celciusFormatado = formatado+"°C";
        return celciusFormatado;
     }
 

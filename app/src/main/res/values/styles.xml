@@ -20,12 +20,19 @@
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">20dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/colorBranco</item>
+        <item name="android:textColor">@color/colorBrancoTransparente</item>
     </style>
 
     <style name="image">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">135dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+   <style name="imageResult">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">180dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_margin">15dp</item>
     </style>
@@ -45,14 +52,18 @@
 
     <style name="comboBox">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:padding">10dp</item>
         <item name="android:spinnerMode">dropdown</item>
+        <item name="android:background">@color/colorBrancoTransparente</item>
     </style>
 
     <style name="listView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
     </style>
 
 

@@ -35,7 +35,7 @@
 
         <ImageView
             android:id="@+id/imgClima"
-            style="@style/image"
+            style="@style/imageResult"
             android:src="@drawable/i10d" />
 
         <TextView

@@ -19,8 +19,8 @@
 
         <Button
             android:id="@+id/btnHistorico"
-            android:background="@drawable/history"
-            style="@style/botaoCantoDireito" />
+            style="@style/botaoCantoDireito"
+            android:background="@drawable/history" />
 
         <ImageView
             style="@style/image"
@@ -28,31 +28,33 @@
 
         <TextView
             android:id="@+id/selecioneCidade"
-            android:text="@string/buscar"
-            style="@style/titulo" />
+            style="@style/titulo"
+            android:text="@string/buscar" />
 
         <TextView
             style="@style/divisor"
-            android:text="_________________________________________________________" />
+            android:text="____________________________" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <Spinner
-            android:id="@+id/spinnerCidades"
-            android:layout_weight="2"
-            android:padding="15dp"
-            style="@style/comboBox" />
+            <Spinner
+                android:id="@+id/spinnerCidades"
+                style="@style/comboBox"
+                android:layout_weight="2"
+                android:autofillHints="@string/buscar"
+                android:gravity="center"/>
 
-        <Button
-            style="@style/botaoCantoDireito"
-            android:id="@+id/btnPesquisar"
-            android:padding="15dp"
-           android:background="@drawable/search"/>
+            <Button
+                android:id="@+id/btnPesquisar"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:background="@drawable/search" />
 
-    </LinearLayout>
+        </LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

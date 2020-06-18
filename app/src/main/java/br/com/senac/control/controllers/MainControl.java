@@ -56,6 +56,8 @@ public class MainControl {
                     android.R.layout.simple_spinner_item,
                     cidadeService.buscarTodos()
             );
+            //A linha abaixo serve para deixar um separação maior entre os itens do dropdown
+            adapterCidades.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             activity.getSpinnerCidades().setAdapter(adapterCidades);
         } catch (SQLException e) {
             e.printStackTrace();
