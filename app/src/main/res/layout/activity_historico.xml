@@ -7,8 +7,8 @@
     tools:context=".view.HistoricoActivity">
 
     <ImageView
-        android:src="@drawable/backgroundnuvem"
-        style="@style/background" />
+        style="@style/background"
+        android:src="@drawable/backgroundnuvem" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,26 +16,25 @@
         android:orientation="vertical">
 
         <ImageView
-            android:src="@drawable/history"
-            style="@style/image" />
+            style="@style/image"
+            android:src="@drawable/history" />
 
         <TextView
             style="@style/titulo"
             android:text="@string/historico" />
 
         <TextView
-            android:text="_________________________________________________________"
-            style="@style/divisor" />
+            style="@style/divisor"
+            android:text="_________________________________________________________" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="15dp">
 
             <ListView
                 android:id="@+id/lvHistorico"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="15dp" />
+                style="@style/listView" />
         </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

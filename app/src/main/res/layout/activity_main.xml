@@ -14,8 +14,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_margin="15dp"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btnHistorico"
@@ -32,18 +32,12 @@
 
 
         <ImageView
-            android:layout_width="157dp"
-            android:layout_height="135dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
+            style="@style/image"
             android:src="@drawable/logo" />
 
         <Spinner
             android:id="@+id/spinnerCidades"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:spinnerMode="dropdown" />
+            style="@style/comboBox" />
 
 
         <RelativeLayout
@@ -52,8 +46,7 @@
 
             <ListView
                 android:id="@+id/lvCidades"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></ListView>
+                style="@style/listView" />
         </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>
