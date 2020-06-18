@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinnerCidades;
     private ListView lvCidades;
     private Button btnHistorico;
+
+    private TextView selecioneCidade;
 
     private MainControl control;
 
@@ -68,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
         spinnerCidades = findViewById(R.id.spinnerCidades);
         lvCidades = findViewById(R.id.lvCidades);
         btnHistorico = findViewById(R.id.btnHistorico);
+        selecioneCidade = findViewById(R.id.selecioneCidade);
+        String test= "d" + "200";
+        selecioneCidade.setText(getString(Integer.parseInt(test)));
     }
 
     public Spinner getSpinnerCidades() {

@@ -27,6 +27,7 @@
             android:src="@drawable/logo" />
 
         <TextView
+            android:id="@+id/selecioneCidade"
             android:text="@string/buscar"
             style="@style/titulo" />
 
