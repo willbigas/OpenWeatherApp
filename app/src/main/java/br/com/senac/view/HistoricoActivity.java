@@ -11,7 +11,6 @@ import br.com.senac.control.controllers.HistoricoControl;
 public class HistoricoActivity extends AppCompatActivity {
 
     private HistoricoControl control;
-    private HistoricoActivity activity;
 
     private ListView lvHistorico;
 
@@ -20,11 +19,18 @@ public class HistoricoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historico);
         inicializaComponentes();
-        control = new HistoricoControl(this.activity);
+        control = new HistoricoControl(this);
     }
 
     private void inicializaComponentes() {
-        activity = new HistoricoActivity();
         lvHistorico = findViewById(R.id.lvHistorico);
+    }
+
+    public ListView getLvHistorico() {
+        return lvHistorico;
+    }
+
+    public void setLvHistorico(ListView lvHistorico) {
+        this.lvHistorico = lvHistorico;
     }
 }

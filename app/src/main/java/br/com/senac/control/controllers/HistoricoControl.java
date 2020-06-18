@@ -4,6 +4,9 @@ import br.com.senac.view.HistoricoActivity;
 
 public class HistoricoControl {
 
-    public HistoricoControl(HistoricoActivity view) {
+    private HistoricoActivity activity;
+
+    public HistoricoControl(HistoricoActivity activity) {
+        this.activity = activity;
     }
 }

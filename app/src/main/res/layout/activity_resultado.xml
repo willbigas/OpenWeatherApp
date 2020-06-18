@@ -25,7 +25,8 @@
                 style="@style/titulo"
                 android:layout_weight="2"
                 android:text="Florianópolis - BR"
-                android:textSize="26sp" />
+                android:textSize="26sp"
+                android:id="@+id/tvCidade"/>
 
             <Button
                 android:id="@+id/btnFavorito"
