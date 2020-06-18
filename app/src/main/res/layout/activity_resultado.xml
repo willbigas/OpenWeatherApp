@@ -24,6 +24,7 @@
             <TextView
                 style="@style/titulo"
                 android:layout_weight="2"
+                android:id="@+id/tvCidade"
                 android:text="Florianópolis - BR"
                 android:textSize="26sp" />
 

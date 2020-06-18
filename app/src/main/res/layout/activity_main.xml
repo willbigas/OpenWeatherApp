@@ -22,6 +22,10 @@
             android:onClick="chamarTelaHistorico"
             style="@style/botaoCantoDireito" />
 
+        <ImageView
+            style="@style/image"
+            android:src="@drawable/logo" />
+
         <TextView
             android:text="@string/buscar"
             style="@style/titulo" />
@@ -30,10 +34,6 @@
             style="@style/divisor"
             android:text="_________________________________________________________" />
 
-
-        <ImageView
-            style="@style/image"
-            android:src="@drawable/logo" />
 
         <Spinner
             android:id="@+id/spinnerCidades"

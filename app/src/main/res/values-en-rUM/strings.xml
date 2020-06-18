@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OpenWeatherApp</string>
+    <string name="hint_buscaNomeDaCidade">Search by city name</string>
+    <string name="buscar">Search</string>
+    <string name="historico">Historic</string>
+</resources>
