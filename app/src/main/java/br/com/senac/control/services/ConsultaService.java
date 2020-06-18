@@ -3,7 +3,9 @@ package br.com.senac.control.services;
 import android.content.Context;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import br.com.senac.model.dao.ConsultaDao;
 import br.com.senac.model.vo.Cidade;
@@ -12,6 +14,7 @@ import br.com.senac.model.vo.Consulta;
 public class ConsultaService {
 
     private ConsultaDao consultaDao;
+
 
     public ConsultaService(Context c) {
         consultaDao = new ConsultaDao(c);
@@ -27,6 +30,10 @@ public class ConsultaService {
         consulta.setUmidade(umidade);
         consulta = consultaDao.getDao().createIfNotExists(consulta);
         return consulta;
+    }
+
+    public List<Consulta> buscarTodos() throws SQLException {
+      return consultaDao.getDao().queryForAll();
     }
 
 }

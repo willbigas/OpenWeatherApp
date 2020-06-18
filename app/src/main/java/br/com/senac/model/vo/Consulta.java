@@ -5,6 +5,9 @@ import com.j256.ormlite.field.DatabaseField;
 import java.io.Serializable;
 import java.util.Date;
 
+import br.com.senac.util.UtilDate;
+import br.com.senac.util.UtilNumberFormat;
+
 public class Consulta implements Serializable {
 
     @DatabaseField(allowGeneratedIdInsert = true, generatedId = true)
@@ -82,5 +85,10 @@ public class Consulta implements Serializable {
 
     public void setUmidade(Integer umidade) {
         this.umidade = umidade;
+    }
+
+    @Override
+    public String toString() {
+        return "Data da Consulta: " + UtilDate.data(data) +  "\nCidade: " +cidade + "\nTemperatura: " + UtilNumberFormat.deDecimalParaCelciusFormatado(temperatura);
     }
 }
