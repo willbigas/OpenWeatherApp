@@ -19,7 +19,9 @@
 
         <Button
             android:id="@+id/btnHistorico"
+            android:background="@drawable/history"
             android:onClick="chamarTelaHistorico"
+
             style="@style/botaoCantoDireito" />
 
         <ImageView
@@ -34,12 +36,21 @@
             style="@style/divisor"
             android:text="_________________________________________________________" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Spinner
             android:id="@+id/spinnerCidades"
+            android:layout_weight="2"
             style="@style/comboBox" />
 
+        <Button
+            style="@style/botaoCantoDireito"
+           android:background="@drawable/search"/>
 
+    </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
