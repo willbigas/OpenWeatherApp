@@ -1,7 +1,9 @@
 package br.com.senac.view;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinnerCidades;
     private ListView lvCidades;
     private Button btnHistorico;
+    private Button btnPesquisar;
 
     private MainControl control;
 
@@ -23,30 +26,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        aplicandoPoliticaDeSingleRequest();
         initialize();
         control = new MainControl(this);
-//        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//        StrictMode.setThreadPolicy(policy);
-//
-//        CidadeService cidadeService = new CidadeService(this);
-//        List<Cidade> cidades = new ArrayList<>();
-//        try {
-//            cidadeService.persistirCidadesIniciais();
-//            cidades = cidadeService.buscarTodos();
-//            System.out.println(cidades);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//
-//        try {
-//            Weather weather = WeatherServerAPI.get(cidades.get(0));
-//            System.out.println("Temperatura da Palhoça " + ConversorDeTemperatura.deKelvinParaCelcius(weather.getMain().getTemp()));
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+
+
+    }
+
+    private void aplicandoPoliticaDeSingleRequest() {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
     }
 
     public void initialize() {
@@ -61,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
                 control.chamarTelaHistorico();
             }
         });
+
+        btnPesquisar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                control.pesquisar();
+            }
+        });
     }
 
 
@@ -68,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerCidades = findViewById(R.id.spinnerCidades);
         lvCidades = findViewById(R.id.lvCidades);
         btnHistorico = findViewById(R.id.btnHistorico);
+        btnPesquisar = findViewById(R.id.btnPesquisar);
     }
 
     public Spinner getSpinnerCidades() {

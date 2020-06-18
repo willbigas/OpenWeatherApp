@@ -20,8 +20,6 @@
         <Button
             android:id="@+id/btnHistorico"
             android:background="@drawable/history"
-            android:onClick="chamarTelaHistorico"
-
             style="@style/botaoCantoDireito" />
 
         <ImageView
@@ -48,6 +46,7 @@
 
         <Button
             style="@style/botaoCantoDireito"
+            android:id="@+id/btnPesquisar"
            android:background="@drawable/search"/>
 
     </LinearLayout>
