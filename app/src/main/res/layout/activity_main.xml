@@ -27,6 +27,7 @@
             android:src="@drawable/logo" />
 
         <TextView
+            android:id="@+id/selecioneCidade"
             android:text="@string/buscar"
             style="@style/titulo" />
 
@@ -42,11 +43,13 @@
         <Spinner
             android:id="@+id/spinnerCidades"
             android:layout_weight="2"
+            android:padding="15dp"
             style="@style/comboBox" />
 
         <Button
             style="@style/botaoCantoDireito"
             android:id="@+id/btnPesquisar"
+            android:padding="15dp"
            android:background="@drawable/search"/>
 
     </LinearLayout>
