@@ -4,6 +4,9 @@ import br.com.senac.view.ResultadoActivity;
 
 public class ResultadoControl {
 
-    public ResultadoControl(ResultadoActivity view) {
+    private ResultadoActivity activity;
+
+    public ResultadoControl(ResultadoActivity activity) {
+        this.activity = activity;
     }
 }

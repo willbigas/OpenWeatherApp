@@ -19,16 +19,15 @@ public class ResultadoActivity extends AppCompatActivity {
     private TextView tvTemp;
     private TextView tvUmidade;
 
-    private ResultadoActivity activity;
 
-    ResultadoControl control;
+    private ResultadoControl control;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
         inicializaComponentes();
-        control = new ResultadoControl(this.activity);
+        control = new ResultadoControl(this);
     }
 
     private void inicializaComponentes() {
@@ -38,9 +37,54 @@ public class ResultadoActivity extends AppCompatActivity {
         tvClimaDesc = findViewById(R.id.tvClimaDesc);
         tvTemp = findViewById(R.id.tvTemp);
         tvUmidade = findViewById(R.id.tvUmidade);
-
-        activity = new ResultadoActivity();
     }
 
 
+    public TextView getTvCidade() {
+        return tvCidade;
+    }
+
+    public void setTvCidade(TextView tvCidade) {
+        this.tvCidade = tvCidade;
+    }
+
+    public Button getBtnFavorito() {
+        return btnFavorito;
+    }
+
+    public void setBtnFavorito(Button btnFavorito) {
+        this.btnFavorito = btnFavorito;
+    }
+
+    public ImageView getImgClima() {
+        return imgClima;
+    }
+
+    public void setImgClima(ImageView imgClima) {
+        this.imgClima = imgClima;
+    }
+
+    public TextView getTvClimaDesc() {
+        return tvClimaDesc;
+    }
+
+    public void setTvClimaDesc(TextView tvClimaDesc) {
+        this.tvClimaDesc = tvClimaDesc;
+    }
+
+    public TextView getTvTemp() {
+        return tvTemp;
+    }
+
+    public void setTvTemp(TextView tvTemp) {
+        this.tvTemp = tvTemp;
+    }
+
+    public TextView getTvUmidade() {
+        return tvUmidade;
+    }
+
+    public void setTvUmidade(TextView tvUmidade) {
+        this.tvUmidade = tvUmidade;
+    }
 }
