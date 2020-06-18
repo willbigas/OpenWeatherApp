@@ -72,12 +72,6 @@ public class Cidade {
 
     @Override
     public String toString() {
-        return "Cidade{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", chaveAPI='" + chaveAPI + '\'' +
-                ", pais='" + pais + '\'' +
-                ", favorito=" + favorito +
-                '}';
+        return nome + " - [" + pais + "]";
     }
 }
